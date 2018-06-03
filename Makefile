@@ -14,6 +14,10 @@ $(BIN): $(OBJS)
 $(OBJ)/%.o: $(SRC)/%.c
 	gcc -o $@ -c $< -I$(INC)
 
+check:
+	make $(BIN)
+	valgrind --leak-check=yes --track-origins=yes ./$(BIN)
+
 .PHONY: clean
 clean:
 	rm -f gc $(OBJ)/*.o

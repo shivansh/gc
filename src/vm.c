@@ -7,6 +7,7 @@
 // newVM creates a new VM object.
 VM* newVM() {
     VM* vm = malloc(sizeof(VM));
+    vm->firstObject = NULL;
     vm->stackSize = 0;
     vm->numObjects = 0;
     vm->maxObjects = INITIAL_GC_THRESHOLD;
