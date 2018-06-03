@@ -1,0 +1,5 @@
+# Ignore binaries
+gc
+
+# Ignore object files
+obj
