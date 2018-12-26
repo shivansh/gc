@@ -5,7 +5,7 @@
 #include "object.h"
 
 // sweep makes a single pass through the entire list of allocated objects,
-// unallocated the ones which are not marked.
+// unallocating the ones which are not marked.
 void sweep(VM* vm) {
     Object** object = &vm->firstObject;
     while (*object) {

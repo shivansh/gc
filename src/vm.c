@@ -47,7 +47,11 @@ void pushInt(VM* vm, int intValue) {
     push(vm, object);
 }
 
-// pushInt pushes a pair of objects (references) into the stack.
+// pushPair pushes a pair of objects (references) into the stack.
+// NOTE that even though the pointers to objects comprising the "reference"
+// object (head and tail) are being popped from the stack, they are still
+// available in heap. Hence, at the end of this step we'll have one more object
+// in the heap.
 Object* pushPair(VM* vm) {
     Object* object = newObject(vm, OBJ_PAIR);
     object->tail = pop(vm);
